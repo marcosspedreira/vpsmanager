@@ -44,7 +44,7 @@ firewall-cmd --reload
 echo -e "\033[1;32mBaixando e configurando o V2Ray Manager...\033[0m"
 cd /usr/local/bin/
 rm -f v2raymanager
-wget -O v2raymanager https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/M/v2raymanager
+wget -O v2raymanager https://raw.githubusercontent.com/marcosspedreira/vpsmanager/refs/heads/master/v2raymanager
 chmod +x v2raymanager
 ln -sf /usr/local/bin/v2raymanager /usr/bin/v2raymanager
 
