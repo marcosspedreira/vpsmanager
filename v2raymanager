@@ -1,10 +1,10 @@
 #!/bin/bash
 cor1='\033[41;1;37m'
 cor2='\033[44;1;37m'
-pontuação='\033[0m'
-VERDE='\033[1;32m'
-AMARELO='\033[1;33m'
-ESCOLOR='\033[0m'
+scor='\033[0m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+SCOLOR='\033[0m'
 msg01='\033[1;37m\033[1;33mUsuário Nulo\033[1;31m'
 msg02='\033[1;37m\033[1;33mNome muito curto (MIN: 2 CHARACTERS)\033[1;31m'
 msg03='\033[1;37m\033[1;33mNome muito grande (MAX: 5 CARACTERES)\033[1;31m'
@@ -15,438 +15,443 @@ msg07='\033[1;37m\033[1;33mDuração Nula\033[1;31m'
 msg08='\033[1;37m\033[1;33mDuração invalida, utilize números\033[1;31m'
 msg09='\033[1;37m\033[1;33mDuração máxima de um ano\033[1;31m'
 msg11='\033[1;37m\033[1;33mLimite Nulo\033[1;31m'
-msg12='\033[1;37m\033[1;33mLimite inválido, utilize números\033[1;31m'
+msg12='\033[1;37m\033[1;33mLimite invalido, utilize números\033[1;31m'
 msg13='\033[1;37m\033[1;33mLimite máximo de 999\033[1;31m'
-msg14='\033[1;37m\033[1;33mUsuário já existe\033[1;31m'
-msg15='\033[1;37m\033[1;33m(Apenas números) GB = Mín: 1gb Máx: 1000gb\033[1;31m'
+msg14='\033[1;37m\033[1;33mUsuario já Existe\033[1;31m'
+msg15='\033[1;37m\033[1;33m(Apenas números) GB = Min: 1gb Max: 1000gb\033[1;31m'
 msg16='\033[1;37m\033[1;33m(Apenas números)\033[1;31m'
-msg17='\033[1;37m\033[1;33m(Sem influências - Para Cancelar Digite CRTL + C)\033[1;31m'
+msg17='\033[1;37m\033[1;33m(Sem imformação - Para Cancelar Digite CRTL + C)\033[1;31m'
     err_fun () {
-    case $1 in
-        1) msg -verm "$(fun_trans "Usuário Nulo")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        2) msg -verm "$(fun_trans "Nome muito curto (MIN: 2 CARACTERES)")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        3) msg -verm "$(fun_trans "Nome muito grande (MAX: 5 CARACTERES)")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        4) msg -verm "$(fun_trans "Senha Nula")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        5) msg -verm "$(fun_trans "Senha muito curta")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        6) msg -verm "$(fun_trans "Senha muito grande")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        7) msg -verm "$(fun_trans "Duração Nula")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        8) msg -verm "$(fun_trans "Duração inválida, utilize números")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        9) msg -verm "$(fun_trans "Duração máxima de um ano")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        11) msg -verm "$(fun_trans "Limite Nulo")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        12) msg -verm "$(fun_trans "Limite inválido, use números")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        13) msg -verm "$(fun_trans "Limite máximo de 999")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        14) msg -verm "$(fun_trans "Usuário já Existe")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        15) msg -verm "$(fun_trans "(Apenas números) GB = Min: 1gb Max: 1000gb")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        16) msg -verm "$(fun_trans "(Apenas números)")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        17) msg -verm "$(fun_trans "(Sem influência - Para Cancelar Digite CTRL + C)")"; sleep 4; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-        *) msg -verm "$(fun_trans "Erro desconhecido")"; sleep 2; tput cuu1; tput dl1; tput cuu1; tput dl1;;
-    esac
+        case $1 in
+        1)msg -verm "$(fun_trans "Usuário Nulo")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        2)msg -verm "$(fun_trans "Nome muito curto (MIN: 2 CHARACTERS)")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        3)msg -verm "$(fun_trans "Nome muito grande (MAX: 5 CARACTERES)")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        4)msg -verm "$(fun_trans "Senha Nula")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        5)msg -verm "$(fun_trans "Senha muito curta")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        6)msg -verm "$(fun_trans "Senha muito grande")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        7)msg -verm "$(fun_trans "Duração Nula")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        8)msg -verm "$(fun_trans "Duração invalida, utilize números")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        9)msg -verm "$(fun_trans "Duração máxima de um ano")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        11)msg -verm "$(fun_trans "Limite Nulo")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        12)msg -verm "$(fun_trans "Limite invalido, utilize números")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        13)msg -verm "$(fun_trans "Limite máximo de 999")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        14)msg -verm "$(fun_trans "Usuario já Existe")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+	    15)msg -verm "$(fun_trans "(Apenas números) GB = Min: 1gb Max: 1000gb")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+	    16)msg -verm "$(fun_trans "(Apenas números)")"; sleep 2s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+	    17)msg -verm "$(fun_trans "(Sem imformação - Para Cancelar Digite CRTL + C)")"; sleep 4s; tput cuu1; tput dl1; tput cuu1; tput dl1;;
+        esac
     }
 
-    instalarv2ray () {
-	mkdir /etc/v2raymanager/v2ray
-    apt instalar python3-pip -y
-    fonte <(curl -sL https://multi.netlify.app/v2ray.sh)
-    echo -e "\033[1;37m\033[1;33mIntalado com Saída!\033[1;31m"
-    USRdatabase="/etc/v2raymanager/RegV2ray"
-    [[ ! -e ${USRdatabase} ]] && toque ${USRdatabase}
-    classificar ${USRdatabase} | uniq > ${USRdatabase}tmp
+    intallv2ray () {
+	mkdir /etc/SSHPlus/v2ray
+    apt install python3-pip -y 
+    source <(curl -sL https://multi.netlify.app/v2ray.sh)
+    echo -e "\033[1;37m\033[1;33mIntalado com Exito!\033[1;31m"
+    USRdatabase="/etc/SSHPlus/RegV2ray"
+    [[ ! -e ${USRdatabase} ]] && touch ${USRdatabase}
+    sort ${USRdatabase} | uniq > ${USRdatabase}tmp
     mv -f ${USRdatabase}tmp ${USRdatabase}
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
 
-    protocolov2ray () {
-    echo -e "\E[44;1;37m ALTERAR PROTOCOLO V2RAY \E[0m"
+    protocolv2ray () {
+    echo -e "\E[44;1;37m            ALTERAR PROTOCOLO V2RAY             \E[0m"
     echo -e "\033[1;37m• \033[1;33mEscolha a opção 3 e coloque o domínio do seu IP\033[1;31m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    transmissão v2ray
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    v2ray stream
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
     tls () {
-    claro
-    echo -e "\E[44;1;37m Ativar ou desativar TLS \E[0m"
+    clear
+    echo -e "\E[44;1;37m            Ativar ou Desativar TLS             \E[0m"
     v2ray tls
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    portav () {
-    echo -e "\E[44;1;37m ALTERAR PORTA V2RAY \E[0m"
-    porta v2ray
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    portv () {
+    echo -e "\E[44;1;37m            ALTERAR PORTA V2RAY             \E[0m"
+    v2ray port
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    estatísticas () {
-    echo -e "\E[44;1;37m ESTATÍSTICAS DE CONSUMO \E[0m"
-    Estatísticas do v2ray
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    stats () {
+    echo -e "\E[44;1;37m            ESTATÍSTICAS DE CONSUMO             \E[0m"
+    v2ray stats
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
     unistallv2 () {
-    fonte <(curl -sL https://multi.netlify.app/v2ray.sh) --remove > /dev/null 2>&1
-    rm -rf /etc/v2raymanager/RegV2ray > /dev/null 2>&1
-	rm -rf /etc/v2raymanager/v2ray > /dev/null 2>&1
+    source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove > /dev/null 2>&1
+    rm -rf /etc/SSHPlus/RegV2ray > /dev/null 2>&1
+	rm -rf /etc/SSHPlus/v2ray > /dev/null 2>&1
     echo -e "\n\033[1;32mV2RAY REMOVIDO COM SUCESSO !\033[0m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    informação () {
-    echo -e "\E[44;1;37m INFORMAÇÃO DE CONTA \E[0m"
-    informações v2ray
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    infocuenta () {
+    echo -e "\E[44;1;37m            INFORMAÇÃO DE CONTA             \E[0m"
+    v2ray info
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
     addusr () {
-    claro
-    echo -e "\E[44;1;37m ADICIONAR USUÁRIO | UUID V2RAY \E[0m"
+    clear
+    echo -e "\E[44;1;37m            ADICIONAR USUARIO | UUID V2RAY             \E[0m"
     ##DIAS
-    válido=$(data '+%C%a-%m-%d' -d " +31 dias")		  
-    ##CORREIO		  
+    valid=$(date '+%C%y-%m-%d' -d " +31 days")		  
+    ##CORREO		  
     MAILITO=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 10)
     ##ADDUSERV2RAY		  
     UUID=`uuidgen`	  
-    sed -i '13i\ \{' /etc/v2ray/config.json
-    sed -i '14i\ \"alterId": 0,' /etc/v2ray/config.json
-    sed -i '15i\ \"id": "'$UUID'",' /etc/v2ray/config.json
-    sed -i '16i\ \"email": "'$MAILITO'@gmail.com"' /etc/v2ray/config.json
-    sed -i '17i\ \},' /etc/v2ray/config.json
-    eco ""
-    enquanto verdadeiro; faça
+    sed -i '13i\           \{' /etc/v2ray/config.json
+    sed -i '14i\           \"alterId": 0,' /etc/v2ray/config.json
+    sed -i '15i\           \"id": "'$UUID'",' /etc/v2ray/config.json
+    sed -i '16i\           \"email": "'$MAILITO'@gmail.com"' /etc/v2ray/config.json
+    sed -i '17i\           \},' /etc/v2ray/config.json
+    echo ""
+    while true; do
     echo -ne "\e[91m >> Digite um usuário: \033[1;92m"
-         leia -p ": " nick
+         read -p ": " nick
          nick="$(echo $nick|sed -e 's/[^a-z0-9 -]//ig')"
-         se [[ -z $nick ]]; então
-         eco -e "$msg17" && continuar
-         elif [[ "${#nick}" -lt "2" ]]; então
-         eco -e "$msg02" && continuar
-         elif [[ "${#nick}" -gt "20" ]]; então
-         eco -e "$msg03" && continuar
-         sim
-         quebrar
-    feito
+         if [[ -z $nick ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "${#nick}" -lt "2" ]]; then
+         echo -e "$msg02" && continue
+         elif [[ "${#nick}" -gt "20" ]]; then
+         echo -e "$msg03" && continue
+         fi
+         break
+    done
     echo -e "\e[91m >> Adicionar UUID: \e[92m$UUID "
-    enquanto verdadeiro; faça
-         echo -ne "\e[91m >> Duração do UUID (Dias):\033[1;92m " && read diasuser
-         se [[ -z "$diasuser" ]]; então
-         eco -e "$msg17" && continuar
-         elif [[ "$diasuser" != +([0-9]) ]]; então
-         eco -e "$msg08" && continuar
-         elif [[ "$diasuser" -gt "360" ]]; então
-         eco -e "$msg09" && continuar
-         sim
-         quebrar
-    feito
+    while true; do
+         echo -ne "\e[91m >> Duração de UUID (Dias):\033[1;92m " && read diasuser
+         if [[ -z "$diasuser" ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "$diasuser" != +([0-9]) ]]; then
+         echo -e "$msg08" && continue
+         elif [[ "$diasuser" -gt "360" ]]; then
+         echo -e "$msg09" && continue
+         fi 
+         break
+    done
     #Lim
-    [[ $(cat /etc/passwd |grep $1: |grep -vi [az]$1 |grep -v [0-9]$1 > /dev/null) ]] && return 1
-    válido=$(data '+%C%y-%m-%d' -d " +$diasuser dias") && datexp=$(data "+%F" -d " + $diasuser dias")
-    echo -e "\e[91m >> Expira em: \e[92m$dateexp "
+    [[ $(cat /etc/passwd |grep $1: |grep -vi [a-z]$1 |grep -v [0-9]$1 > /dev/null) ]] && return 1
+    valid=$(date '+%C%y-%m-%d' -d " +$diasuser days") && datexp=$(date "+%F" -d " + $diasuser days")
+    echo -e "\e[91m >> Expira em : \e[92m$datexp "
     ##Registro
-    eco " $UUID | $nick | $valid " >> /etc/v2raymanager/RegV2ray
-    Data=`data +%d-%m-%y-%R`
-    cp /etc/v2raymanager/RegV2ray /etc/v2raymanager/v2ray/RegV2ray-"$Fecha"
-    v2ray reiniciar > /dev/null 2>&1
-    eco ""
-    Informações do v2ray > /etc/v2raymanager/v2ray/confuuid.log
-    lineP=$(sed -n '/'${UUID}'/=' /etc/v2raymanager/v2ray/confuuid.log)
+    echo "  $UUID | $nick | $valid " >> /etc/SSHPlus/RegV2ray
+    Fecha=`date +%d-%m-%y-%R`
+    cp /etc/SSHPlus/RegV2ray /etc/SSHPlus/v2ray/RegV2ray-"$Fecha"
+    v2ray restart > /dev/null 2>&1
+    echo ""
+    v2ray info > /etc/SSHPlus/v2ray/confuuid.log
+    lineP=$(sed -n '/'${UUID}'/=' /etc/SSHPlus/v2ray/confuuid.log)
     numl1=4
-    deixe soma=$lineP+$numl1
-    sed -n ${suma}p /etc/v2raymanager/v2ray/confuuid.log
-	eco ""
-    sed -i "11 s;%3A443;$nick;g" /etc/v2raymanager/v2ray/confuuid.log
-    gato /etc/v2raymanager/v2ray/confuuid.log | sed -n '11 p'
-    eco ""
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[92m UUID ADICIONADO COM EXITO "
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    let suma=$lineP+$numl1
+    sed -n ${suma}p /etc/SSHPlus/v2ray/confuuid.log 
+	echo ""
+    sed -i "11 s;%3A443;$nick;g" /etc/SSHPlus/v2ray/confuuid.log
+    cat /etc/SSHPlus/v2ray/confuuid.log  | sed -n '11 p'
+    echo ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[92m           UUID ADICIONADO COM EXITO "
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
 
     delusr () {
-    claro
-    claro
+    clear 
+    clear
     invaliduuid () {
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[91m UUID INVÁLIDO\n"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[91m                    UUID INVALIDO \n"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m ELIMINAR USUÁRIO | UUID V2RAY \E[0m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[97m USUÁRIOS REGISTRADOS"
-    eco -e "\e[33m$(cat /etc/v2raymanager/RegV2ray|cut -d '|' -f2,1)"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[44;1;37m            ELIMINAR USUARIO | UUID V2RAY             \E[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[97m               USUARIOS REGISTRADOS"
+    echo -e "\e[33m$(cat /etc/SSHPlus/RegV2ray|cut -d '|' -f2,1)" 
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -ne "\e[91m >> Digita UUID para eliminar:\n \033[1;92m " && read uuidel
-    [[ $(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json|head -1) ]] || ID inválido
+    [[ $(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json|head -1) ]] || invaliduuid
     lineP=$(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json)
-    linePre=$(sed -n '/'${uuidel}'/=' /etc/v2raymanager/RegV2ray)
-    sed -i "${linePre}d" /etc/v2raymanager/RegV2ray
+    linePre=$(sed -n '/'${uuidel}'/=' /etc/SSHPlus/RegV2ray)
+    sed -i "${linePre}d" /etc/SSHPlus/RegV2ray
     numl1=2
-    deixe resta=$lineP-$numl1
+    let resta=$lineP-$numl1
     sed -i "${resta}d" /etc/v2ray/config.json
     sed -i "${resta}d" /etc/v2ray/config.json
     sed -i "${resta}d" /etc/v2ray/config.json
     sed -i "${resta}d" /etc/v2ray/config.json
     sed -i "${resta}d" /etc/v2ray/config.json
-    v2ray reiniciar > /dev/null 2>&1
-    eco ""
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[92m UUID ELIMINADO COM EXITO "
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    v2ray restart > /dev/null 2>&1
+    echo ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[92m           UUID ELIMINADO COM EXITO "
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
 
     mosusr_kk() {
-    claro
-    claro
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m USUÁRIOS REGISTRADOS | UUID V2RAY \E[0m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    # usuáriosss=$(cat /etc/v2raymanager/RegV2ray|cut -d '|' -f1)
-    # gato /etc/v2raymanager/RegV2ray|cut -d'|' -f3
-    VPSsec=$(data +%s)
-    HOST local="/etc/v2raymanager/RegV2ray"
-    HOST2 local="/etc/v2raymanager/RegV2ray"
-    RETORNO local="$(cat $HOST|cut -d'|' -f2)"
-    IDEUUID local="$(cat $HOST|cut -d'|' -f1)"
-    se [[ -z $RETURN ]]; então
-    echo -e "----- NENHUM USUÁRIO REGISTRADO -----"
+    clear 
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[44;1;37m            USUARIOS REGISTRADOS | UUID V2RAY             \E[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    # usersss=$(cat /etc/SSHPlus/RegV2ray|cut -d '|' -f1)
+    # cat /etc/SSHPlus/RegV2ray|cut -d'|' -f3
+    VPSsec=$(date +%s)
+    local HOST="/etc/SSHPlus/RegV2ray"
+    local HOST2="/etc/SSHPlus/RegV2ray"
+    local RETURN="$(cat $HOST|cut -d'|' -f2)"
+    local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
+    if [[ -z $RETURN ]]; then
+    echo -e "----- NENHUM USUARIO REGISTRADO -----"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
-    outro
-    eu=1
-    echo -e "\e[97m UUID | USUÁRIO | EXPIRAÇÃO \e[93m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    enquanto lê hostreturn; faça
-    DateExp="$(cat /etc/v2raymanager/RegV2ray|grep -w "$hostreturn"|cut -d'|' -f3)"
-    se [[ ! -z $DateExp ]]; então             
-    DataSec=$(data +%s --data="$DataExp")
+    fun_v2raymanager
+    else
+    i=1
+    echo -e "\e[97m                 UUID                | USER | EXPIRACION \e[93m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    while read hostreturn ; do
+    DateExp="$(cat /etc/SSHPlus/RegV2ray|grep -w "$hostreturn"|cut -d'|' -f3)"
+    if [[ ! -z $DateExp ]]; then             
+    DataSec=$(date +%s --date="$DateExp")
     [[ "$VPSsec" -gt "$DataSec" ]] && EXPTIME="\e[91m[EXPIRADO]\e[97m" || EXPTIME="\e[92m[$(($(($DataSec - $VPSsec)) / 86400))]\e[97m Dias"
-    outro
+    else
     EXPTIME="\e[91m[ S/R ]"
-    sim
-    usris="$(cat /etc/v2raymanager/RegV2ray|grep -w "$hostreturn"|cut -d'|' -f2)"
-    contador local_secuencial+="\e[93m$hostreturn \e[97m|\e[93m$usris\e[97m|\e[93m $EXPTIME \n"           
-          se [[ $i -gt 30 ]]; então
+    fi 
+    usris="$(cat /etc/SSHPlus/RegV2ray|grep -w "$hostreturn"|cut -d'|' -f2)"
+    local contador_secuencial+="\e[93m$hostreturn \e[97m|\e[93m$usris\e[97m|\e[93m $EXPTIME \n"           
+          if [[ $i -gt 30 ]]; then
     	      echo -e "$contador_secuencial"
-    	  desconfigurar contador_secuencial
-    	  desmarcar i
-    	  sim
-    deixe i++
-    feito <<< "$IDEUUID"
+    	  unset contador_secuencial
+    	  unset i
+    	  fi
+    let i++
+    done <<< "$IDEUUID"
     [[ ! -z $contador_secuencial ]] && {
-    linhasss=$(cat /etc/v2raymanager/RegV2ray | wc -l)
-    	      echo -e "$contador_secuencial \n Número de Registrados: $linesss"
+    linesss=$(cat /etc/SSHPlus/RegV2ray | wc -l)
+    	      echo -e "$contador_secuencial \n Numero de Registrados: $linesss"
     	}
-    sim
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    fi
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
     lim_port () {
-    claro
-    claro
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m LIMITE MB X PORTA | UUID V2RAY \E[0m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    clear 
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[44;1;37m            LIMITAR MB X PORT | UUID V2RAY             \E[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     ###VER
     estarts () {
-    VPSsec=$(data +%s)
-    HOST local="/etc/v2raymanager/v2ray/lisportt.log"
-    local HOST2="/etc/v2raymanager/v2ray/lisportt.log"
-    RETORNO local="$(cat $HOST|cut -d'|' -f2)"
-    IDEUUID local="$(cat $HOST|cut -d'|' -f1)"
-    se [[ -z $RETURN ]]; então
+    VPSsec=$(date +%s)
+    local HOST="/etc/SSHPlus/v2ray/lisportt.log"
+    local HOST2="/etc/SSHPlus/v2ray/lisportt.log"
+    local RETURN="$(cat $HOST|cut -d'|' -f2)"
+    local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
+    if [[ -z $RETURN ]]; then
     echo -e "----- NENHUMA PORTA REGISTRADA -----"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
-    outro
-    eu=1
-    enquanto lê hostreturn; faça
-    iptables -n -v -L > /etc/v2raymanager/v2ray/data1.log
-    statsss=$(cat /etc/v2raymanager/v2ray/data1.log|grep -w "tcp spt:$hostreturn quota:"|cut -d' ' -f3,4,5)
-    gblim=$(cat /etc/v2raymanager/v2ray/lisportt.log|grep -w "$hostreturn"|cut -d'|' -f2)
-    contador_secuencial+=" \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB \n"          
-          se [[ $i -gt 30 ]]; então
+    fun_v2raymanager
+    else
+    i=1
+    while read hostreturn ; do
+    iptables -n -v -L > /etc/SSHPlus/v2ray/data1.log 
+    statsss=$(cat /etc/SSHPlus/v2ray/data1.log|grep -w "tcp spt:$hostreturn quota:"|cut -d' ' -f3,4,5)
+    gblim=$(cat /etc/SSHPlus/v2ray/lisportt.log|grep -w "$hostreturn"|cut -d'|' -f2)
+    local contador_secuencial+="         \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB  \n"          
+          if [[ $i -gt 30 ]]; then
     	      echo -e "$contador_secuencial"
-    	  desconfigurar contador_secuencial
-    	  desmarcar i
-    	  sim
-    deixe i++
-    feito <<< "$IDEUUID"
+    	  unset contador_secuencial
+    	  unset i
+    	  fi
+    let i++
+    done <<< "$IDEUUID"
     [[ ! -z $contador_secuencial ]] && {
-    linhasss=$(cat /etc/v2raymanager/v2ray/lisportt.log | wc -l)
-    	      echo -e "$contador_secuencial \n Portos Limitados: $linesss"
+    linesss=$(cat /etc/SSHPlus/v2ray/lisportt.log | wc -l)
+    	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
     	}
-    sim
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    fi
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager 
     }
     ###LIM
-    transporte () {
-    enquanto verdadeiro; faça
+    liport () {
+    while true; do
          echo -ne "\e[91m >> Digite Port a Limitar:\033[1;92m " && read portbg
-         se [[ -z "$portbg" ]]; então
-         eco -e "$msg17" && continuar
-         elif [[ "$portbg" != +([0-9]) ]]; então
-         eco -e "$msg16" && continuar
-         elif [[ "$portbg" -gt "1000" ]]; então
-         eco -e "$msg16" && continuar
-         sim
-         quebrar
-    feito
-    enquanto verdadeiro; faça
-         echo -ne "\e[91m >> Digite Número de GB:\033[1;92m " && read capgb
-         se [[ -z "$capgb" ]]; então
-         eco -e "$msg17" && continuar
-         elif [[ "$capgb" != +([0-9]) ]]; então
-         eco -e "$msg15" && continuar
-         elif [[ "$capgb" -gt "1000" ]]; então
-         eco -e "$msg15" && continuar
-         sim
-         quebrar
-    feito
+         if [[ -z "$portbg" ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "$portbg" != +([0-9]) ]]; then
+         echo -e "$msg16" && continue
+         elif [[ "$portbg" -gt "1000" ]]; then
+         echo -e "$msg16" && continue
+         fi 
+         break
+    done
+    while true; do
+         echo -ne "\e[91m >> Digite Cantidad de GB:\033[1;92m " && read capgb
+         if [[ -z "$capgb" ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "$capgb" != +([0-9]) ]]; then
+         echo -e "$msg15" && continue
+         elif [[ "$capgb" -gt "1000" ]]; then
+         echo -e "$msg15" && continue
+         fi 
+         break
+    done
     uml1=1073741824
     gbuser="$capgb"
-    deixe multiplicação=$uml1*$gbuser
-    sudo iptables -I SAÍDA -p tcp --sport $portbg -j DROP
-    sudo iptables -I OUTPUT -p tcp --sport $portbg -m quota --quota $multiplicacion -j ACEITAR
+    let multiplicacion=$uml1*$gbuser
+    sudo iptables -I OUTPUT -p tcp --sport $portbg -j DROP
+    sudo iptables -I OUTPUT -p tcp --sport $portbg -m quota --quota $multiplicacion -j ACCEPT
     iptables-save > /etc/iptables/rules.v4
-    eco ""
+    echo ""
     echo -e " Porta Selecionada: $portbg | Quantidade de GB: $gbuser"
-    eco ""
-    echo " $portbg | $gbuser | $multiplicacion " >> /etc/v2raymanager/v2ray/lisportt.log
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo ""
+    echo " $portbg | $gbuser | $multiplicacion " >> /etc/SSHPlus/v2ray/lisportt.log 
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
     ###RES
-    resdata() {
-    VPSsec=$(data +%s)
-    HOST local="/etc/v2raymanager/v2ray/lisportt.log"
-    local HOST2="/etc/v2raymanager/v2ray/lisportt.log"
-    RETORNO local="$(cat $HOST|cut -d'|' -f2)"
-    IDEUUID local="$(cat $HOST|cut -d'|' -f1)"
-    se [[ -z $RETURN ]]; então
+    resdata () {
+    VPSsec=$(date +%s)
+    local HOST="/etc/SSHPlus/v2ray/lisportt.log"
+    local HOST2="/etc/SSHPlus/v2ray/lisportt.log"
+    local RETURN="$(cat $HOST|cut -d'|' -f2)"
+    local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
+    if [[ -z $RETURN ]]; then
     echo -e "----- NENHUMA PORTA REGISTRADA -----"
-    retornar 0
-    outro
-    eu=1
-    enquanto lê hostreturn; faça
-    iptables -n -v -L > /etc/v2raymanager/v2ray/data1.log
-    statsss=$(cat /etc/v2raymanager/v2ray/data1.log|grep -w "tcp spt:$hostreturn quota:"|cut -d' ' -f3,4,5)
-    gblim=$(cat /etc/v2raymanager/v2ray/lisportt.log|grep -w "$hostreturn"|cut -d'|' -f2)
-    contador_secuencial+=" \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB \n"  
+    return 0
+    else
+    i=1
+    while read hostreturn ; do
+    iptables -n -v -L > /etc/SSHPlus/v2ray/data1.log 
+    statsss=$(cat /etc/SSHPlus/v2ray/data1.log|grep -w "tcp spt:$hostreturn quota:"|cut -d' ' -f3,4,5)
+    gblim=$(cat /etc/SSHPlus/v2ray/lisportt.log|grep -w "$hostreturn"|cut -d'|' -f2)
+    local contador_secuencial+="         \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB  \n"  
             
-          se [[ $i -gt 30 ]]; então
+          if [[ $i -gt 30 ]]; then
     	      echo -e "$contador_secuencial"
-    	  desconfigurar contador_secuencial
-    	  desmarcar i
-    	  sim
-    deixe i++
-    feito <<< "$IDEUUID"
+    	  unset contador_secuencial
+    	  unset i
+    	  fi
+    let i++
+    done <<< "$IDEUUID"
 
     [[ ! -z $contador_secuencial ]] && {
-    linhasss=$(cat /etc/v2raymanager/v2ray/lisportt.log | wc -l)
-    	      echo -e "$contador_secuencial \n Portos Limitados: $linesss"
+    linesss=$(cat /etc/SSHPlus/v2ray/lisportt.log | wc -l)
+    	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
     	}
-    sim
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    fi
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
-    enquanto verdadeiro; faça
-         echo -ne "\e[91m >> Digite Porto a Limpiar:\033[1;92m " && read portbg
-         se [[ -z "$portbg" ]]; então
-         eco -e "$msg17" && continuar
-         elif [[ "$portbg" != +([0-9]) ]]; então
-         eco -e "$msg16" && continuar
-         elif [[ "$portbg" -gt "1000" ]]; então
-         eco -e "$msg16" && continuar
-         sim
-         quebrar
-    feito
+    while true; do
+         echo -ne "\e[91m >> Digite Puerto a Limpiar:\033[1;92m " && read portbg
+         if [[ -z "$portbg" ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "$portbg" != +([0-9]) ]]; then
+         echo -e "$msg16" && continue
+         elif [[ "$portbg" -gt "1000" ]]; then
+         echo -e "$msg16" && continue
+         fi 
+         break
+    done
     invaliduuid () {
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[91m PORTA INVÁLIDA \n"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[91m                PORTA INVALIDA \n"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    [[ $(sed -n '/'${portbg}'/=' /etc/v2raymanager/v2ray/lisportt.log|head -1) ]] || ID inválido
-    gblim=$(cat /etc/v2raymanager/v2ray/lisportt.log|grep -w "$portbg"|cut -d'|' -f3)
-    sudo iptables -D SAÍDA -p tcp --sport $portbg -j DROP
-    sudo iptables -D SAÍDA -p tcp --sport $portbg -m quota --quota $gblim -j ACEITAR
+    [[ $(sed -n '/'${portbg}'/=' /etc/SSHPlus/v2ray/lisportt.log|head -1) ]] || invaliduuid
+    gblim=$(cat /etc/SSHPlus/v2ray/lisportt.log|grep -w "$portbg"|cut -d'|' -f3)
+    sudo iptables -D OUTPUT -p tcp --sport $portbg -j DROP
+    sudo iptables -D OUTPUT -p tcp --sport $portbg -m quota --quota $gblim -j ACCEPT
     iptables-save > /etc/iptables/rules.v4
-    lineP=$(sed -n '/'${portbg}'/=' /etc/v2raymanager/v2ray/lisportt.log)
-    sed -i "${linePre}d" /etc/v2raymanager/v2ray/lisportt.log
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    lineP=$(sed -n '/'${portbg}'/=' /etc/SSHPlus/v2ray/lisportt.log)
+    sed -i "${linePre}d" /etc/SSHPlus/v2ray/lisportt.log
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
     }
-    ## CARDÁPIO
+    ## MENU
     echo -e "\033[1;37m\033[1;33m[1] > LIMITAR DADOS x PORTA\033[1;31m"
     echo -e "\033[1;37m\033[1;33m[2] > RESETAR DADOS DE PORTA\033[1;31m"
-    echo -e "\033[1;37m\033[1;33m[3] > VER DADOS CONSUMIDOS\033[1;31m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[1;37m\033[1;33m[3] > VER DATOS CONSUMIDOS\033[1;31m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;32m [0] > \e[97m\033[1;41m VOLTAR \033[1;37m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    seleção=$(seleção_fun 3)
-    caso ${seleção} em
-    1)transporte ;;
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    selection=$(selection_fun 3)
+    case ${selection} in
+    1)liport ;;
     2)resdata;;
-    3)começa;;
+    3)estarts;;
     0)
-    gerente_fun_v2ray
+    fun_v2raymanager
     ;;
     esac
     }
 
     #.
-    limpador_ativador () {
-    PIDGEN não definido
+    limpiador_activador () {
+    unset PIDGEN
     PIDGEN=$(ps aux|grep -v grep|grep "limv2ray")
-    se [[ ! $PIDGEN ]]; então
-    tela -dmS limv2ray relógio -n 21600 limv2ray
-    outro
-    #tela killall
-    tela -S limv2ray -p 0 -X sair
-    sim
-    PID_GEN não definido
+    if [[ ! $PIDGEN ]]; then
+    screen -dmS limv2ray watch -n 21600 limv2ray
+    else
+    #killall screen
+    screen -S limv2ray -p 0 -X quit
+    fi
+    unset PID_GEN
     PID_GEN=$(ps x|grep -v grep|grep "limv2ray")
-    [[ ! $PID_GEN ]] && PID_GEN="\e[91m ✕ " || PID_GEN="\e[92m ✓ "
-    statgen="$(eco $PID_GEN)"
-    claro
-    claro
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m ELIMINAR EXPIRADOS | UUID V2RAY \E[0m"
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    eco ""
-    eco -e " $statgen "
-    eco "" 						
-    eco -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    [[ ! $PID_GEN ]] && PID_GEN="\e[91m ✕  " || PID_GEN="\e[92m ✓  "
+    statgen="$(echo $PID_GEN)"
+    clear 
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[44;1;37m            ELIMINAR EXPIRADOS | UUID V2RAY             \E[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo ""
+    echo -e "                    $statgen " 
+    echo "" 						
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
-    gerente_fun_v2ray
+    fun_v2raymanager
 
     }
 
-    seleção_diversão () {
-    seleção local="null"
-    alcance local
-    para((i=0; i<=$1; i++)); faça intervalo[$i]="$i "; feito
-    enquanto [[ ! $(echo ${range[*]}|grep -w "$selection") ]]; faça
-    echo -ne "\033[1;37m ► Selecione uma opção: " >&2
-    leia a seleção
+    selection_fun () {
+    local selection="null"
+    local range
+    for((i=0; i<=$1; i++)); do range[$i]="$i "; done
+    while [[ ! $(echo ${range[*]}|grep -w "$selection") ]]; do
+    echo -ne "\033[1;37m ► Selecione uma Opção: " >&2
+    read selection
     tput cuu1 >&2 && tput dl1 >&2
-    feito
-    eco $seleção
+    done
+    echo $selection
     }
+
+    PID_GEN=$(ps x|grep -v grep|grep "limv2ray")
+    [[ ! $PID_GEN ]] && PID_GEN="\e[91m✕  " || PID_GEN="\e[92m✓  "
+    statgen="$(echo $PID_GEN)"
+    #SPR & 
+    echo -e "\033[0;34m━━━━━━━━━━━━
